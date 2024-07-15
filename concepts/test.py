@@ -19,7 +19,6 @@ def minRequiredJumps(arr):
         return 1 + result[curr_step] if count != 0 else 0
 
     recursiveMethod(arr)
-    # print(a)
     print(result)
     return result[0]
 
