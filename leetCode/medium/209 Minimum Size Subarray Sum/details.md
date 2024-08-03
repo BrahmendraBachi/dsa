@@ -3,5 +3,5 @@
 
 # concepts
     1. `Array`
-    2. `Binary` 
+    2. `Binary`
     3. `Search`
