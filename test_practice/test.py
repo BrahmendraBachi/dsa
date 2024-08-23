@@ -1,38 +1,27 @@
-def jump(nums):
-    curr_step = 0
+def getAllValidCombs(candidates, target):
+    all_combs = []
+    comb = []
 
-    def canJump(curr_index):
-        if curr_index == len(nums) - 1:
-            return True
-        maxJump = nums[curr_index]
-        if maxJump == 0:
-            return False
-        start = curr_index + 1
-        for curr_index in range(start, curr_index + nums[curr_index] + 1):
-            return canJump(curr_index)
-        return False
+    def isValidComb(curr_sum, i):
+        nonlocal comb
+        if curr_sum > target:
+            return
+        if curr_sum == target:
+            all_combs.append(comb.copy())
+            return
+        for j in range(i, len(candidates)):
+            comb.append(candidates[j])
+            isValidComb(curr_sum + candidates[j], j)
+            comb.pop()
 
-    dp = [None] * len(nums)
-
-    def minStepsToJump(curr_index):
-        if dp[curr_index] is not None:
-            return dp[curr_index]
-        if curr_index >= len(nums) - 1:
-            return 1
-        maxJump = nums[curr_index]
-        if maxJump == 0:
-            return 0
-        start = curr_index + 1
-        end = curr_index + nums[curr_index] + 1
-        for i in range(start, end):
-            count = minStepsToJump(i)
-            dp[curr_index] = count if dp[curr_index] is None else min(count, dp[curr_index])
-        return dp[curr_index]
-
-    return minStepsToJump(curr_step)
+    isValidComb(0, 0)
+    return all_combs
 
 
-if __name__ == '__main__':
-    arr1 = [2, 3, 1, 1, 4]
-    arr2 = [3, 2, 1, 0, 4]
-    print(jump(arr1))
+if __name__ == "__main__":
+    print(getAllValidCombs([2, 3, 6, 7], 7))
+    print(getAllValidCombs([8, 7, 4, 3], 11))
+    print(getAllValidCombs([2, 3, 5], 8))
+    print(getAllValidCombs([2], 1))
+    print(getAllValidCombs([2, 3, 5], 10))
+    print(getAllValidCombs([5, 3, 2], 10))
