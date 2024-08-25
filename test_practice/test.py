@@ -1,27 +1,29 @@
-def getAllValidCombs(candidates, target):
-    all_combs = []
-    comb = []
+from concepts.linkedlist.linkedlist import LinkedList
+from concepts.linkedlist.linkedListUtils import merge_sorted_linked_lists
 
-    def isValidComb(curr_sum, i):
-        nonlocal comb
-        if curr_sum > target:
-            return
-        if curr_sum == target:
-            all_combs.append(comb.copy())
-            return
-        for j in range(i, len(candidates)):
-            comb.append(candidates[j])
-            isValidComb(curr_sum + candidates[j], j)
-            comb.pop()
 
-    isValidComb(0, 0)
-    return all_combs
+def mergeSortedLinkedLists(linkedLists):
+    if len(linkedLists) == 1:
+        return linkedLists
+    if len(linkedLists) == 0:
+        return None
+    m = len(linkedLists) // 2
+    linkedList1 = mergeSortedLinkedLists(linkedLists[:m])
+    linkedList2 = mergeSortedLinkedLists(linkedLists[m:])
+    return merge_sorted_linked_lists(linkedList1, linkedList2)
+
+    pass
+
+
+def convertListsToLinkedLists(lists):
+    return [LinkedList(_list) for _list in lists]
 
 
 if __name__ == "__main__":
-    print(getAllValidCombs([2, 3, 6, 7], 7))
-    print(getAllValidCombs([8, 7, 4, 3], 11))
-    print(getAllValidCombs([2, 3, 5], 8))
-    print(getAllValidCombs([2], 1))
-    print(getAllValidCombs([2, 3, 5], 10))
-    print(getAllValidCombs([5, 3, 2], 10))
+    lists_1 = [[1, 4, 5], [1, 3, 4], [2, 6]]
+
+    linkedLists = convertListsToLinkedLists(lists_1)
+    # for linkedList in linkedLists:
+    #     linkedList.print_elements()
+
+

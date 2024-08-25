@@ -1,14 +1,17 @@
 class Node:
-    def __init__(self, value, next=None):
+    def __init__(self, value=None, next=None):
         self.val = value
         self.next = next
 
 
 class LinkedList:
-    def __init__(self, elements):
-        self.head = Node(elements[0])
-        for element in elements[1:]:
-            self.insert_at_end(element)
+    def __init__(self, elements=None, start_head=None):
+        if start_head:
+            self.head = start_head
+        else:
+            self.head = Node(elements[0])
+            for element in elements[1:]:
+                self.insert_at_end(element, printAfterInsert=False)
 
     def print_elements(self):
         head = self.head
@@ -122,6 +125,9 @@ class LinkedList:
             print("After reversing linked_list: ")
             self.print_elements()
 
+    def returnHead(self):
+        return self.head
+
 
 if __name__ == '__main__':
     list_elements = [1, 2, 3, 4, 5, 6, 7, 8]
@@ -129,10 +135,10 @@ if __name__ == '__main__':
     linked_list.print_elements()
     linked_list.insert_at_end(9)
     linked_list.insert_at_start(0)
-    # linked_list.insert_at_index(100, 10, True)
-    # linked_list.delete_at_start()
-    # linked_list.delete_at_end()
-    # linked_list.delete_at_index(3)
+    linked_list.insert_at_index(100, 10, True)
+    linked_list.delete_at_start()
+    linked_list.delete_at_end()
+    linked_list.delete_at_index(3)
 
-    linked_list.reverse()
-    linked_list.reverse()
+    # linked_list.reverse()
+    # linked_list.reverse()
