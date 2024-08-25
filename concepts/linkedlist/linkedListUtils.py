@@ -1,8 +1,10 @@
-from linkedlist import Node, LinkedList
+from concepts.linkedlist.linkedlist import Node, LinkedList
 
 
 def merge_sorted_linked_lists(linkedList1, linkedList2):
-    head1, head2 = linkedList1.returnHead(), linkedList2.returnHead()
+    # head1, head2 = linkedList1.returnHead(), linkedList2.returnHead()
+    head1 = None if linkedList1 is None else linkedList1.returnHead()
+    head2 = None if linkedList2 is None else linkedList2.returnHead()
     temp_head = new_head = None
     while head1 or head2:
         if head1 and head2:
@@ -24,7 +26,13 @@ def merge_sorted_linked_lists(linkedList1, linkedList2):
         else:
             temp_head.next = Node(val)
             temp_head = temp_head.next
-    return new_head
+    new_linked_list = LinkedList(start_head=new_head)
+    new_linked_list.print_elements()
+    return new_linked_list
+
+
+def convertListsToLinkedLists(lists):
+    return [LinkedList(_list) for _list in lists]
 
 
 class LinkedListUtils:
