@@ -20,7 +20,6 @@ def merge_sort(arr):
     return merge_two_sorted_lists(arr1, arr2)
 
 
-
 if __name__ == "__main__":
 
     input1 = [2, 3, 5, 4, 6, 1, 1, 1]
