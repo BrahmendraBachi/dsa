@@ -1,4 +1,4 @@
-def threeSum(self, nums: List[int]) -> List[List[int]]:
+def threeSum(nums):
     nums.sort()
     answer = []
     for i in range(len(nums) - 2):
