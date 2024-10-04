@@ -3,7 +3,7 @@ https://leetcode.com/problems/search-insert-position/description/
 
 # **My-solution**
 
-### _time-complexity_: `O(nlogn)`
+### _time-complexity_: `O(logn)`
 ### _space-complexity_: `O(1)`
 
 
