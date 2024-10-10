@@ -1,21 +1,3 @@
-#!/bin/python3
-
-import math
-import os
-import random
-import re
-import sys
-
-
-#
-# Complete the 'minimumLoss' function below.
-#
-# The function is expected to return an INTEGER.
-# The function accepts LONG_INTEGER_ARRAY price as parameter.
-#
-
-from dummy import get_LongText
-
 def minimumLoss(price):
     curr_min = None
     n = len(price)
@@ -48,14 +30,3 @@ def minimumLoss(price):
             else:
                 ind -= 1
     return abs(curr_min) if curr_min is not None else 0
-
-    # Write your code here
-
-
-if __name__ == '__main__':
-    input1 = get_LongText().split(" ")
-    for i in range(len(input1)):
-        input1[i] = int(input1[i])
-
-    # print("1 1 1".split())
-    print(minimumLoss(input1))
