@@ -108,22 +108,35 @@ class LinkedList:
             self.print_elements()
 
     def reverse(self, printAfterReverse=True):
-        head = self.head
-        all_nodes = []
-        while head:
-            all_nodes.append(head)
-            head = head.next
-        all_nodes = all_nodes[::-1]
-        new_list = all_nodes[0]
-        for i in range(1, self.get_length()):
-            new_list.next = all_nodes[i]
-            new_list = new_list.next
-        new_list.next = None
-        self.head = all_nodes[0]
+        prev, curr = None, self.head
+        while curr:
+            next_node = curr.next
+            curr.next = prev
+
+            prev = curr
+            curr = next_node
+        self.head = prev
 
         if printAfterReverse:
             print("After reversing linked_list: ")
             self.print_elements()
+
+
+    def recursiveReverse(self, printAfterReverse=True):
+        self.head = self.reverseNodes(None, self.head)
+
+        if printAfterReverse:
+            print("After reversing linked_list: ")
+            self.print_elements()
+
+    def reverseNodes(self, prev: Node, currNode: Node):
+        if not currNode:
+            return prev
+        temp = currNode.next
+        currNode.next = prev
+        return self.reverseNodes(currNode, temp)
+
+
 
     def returnHead(self):
         return self.head
@@ -140,5 +153,4 @@ if __name__ == '__main__':
     linked_list.delete_at_end()
     linked_list.delete_at_index(3)
 
-    # linked_list.reverse()
-    # linked_list.reverse()
+    linked_list.reverse()
