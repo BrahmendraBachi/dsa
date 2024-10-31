@@ -1,40 +1,33 @@
-def threeSumClosest(nums, target):
-    nums.sort()
-    closest = None
-    closest_sum = 0
-    for i in range(len(nums) - 2):
-        curr_sum = nums[i]
-        l = i + 1
-        r = len(nums) - 1
-        while l < r:
-            curr_sum += nums[r] + nums[l]
-            curr_closest = target - curr_sum
-            if closest is None or abs(curr_closest) < closest:
-                closest = abs(curr_closest)
-                closest_sum = curr_sum
-            if curr_closest == 0:
-                return curr_sum
-            elif curr_closest > 0:
-                l += 1
-            else:
-                r -= 1
+def maxArea(height):
+    n = len(height)
+    leftHeights, rightHeights = [0] * n, [0] * n
+    maxi = 0
+    for i in range(n):
+        maxi = max(maxi, height[i])
+        leftHeights[i] = maxi
+    maxi = 0
+    for i in range(n - 1, -1, -1):
+        maxi = max(maxi, height[i])
+        rightHeights[i] = maxi
 
-            curr_sum = nums[i]
-    return closest_sum
+    ptr1, ptr2 = 0, n - 1
+    max_area = 0
+    currArea = 0
+    while ptr1 < ptr2:
+        currArea = (ptr2 - ptr1) * min(leftHeights[ptr1], rightHeights[ptr2])
+        max_area = max(currArea, max_area)
+
+        tempArea1 = (ptr2 - (ptr1 + 1)) * min(leftHeights[ptr1 + 1], rightHeights[ptr2])
+        tempArea2 = (ptr2 - 1 - ptr1) * min(leftHeights[ptr1], rightHeights[ptr2-1])
+        if tempArea1 > tempArea2:
+            ptr1 += 1
+        else:
+            ptr2 -= 1
+    return max_area
 
 if __name__ == "__main__":
-    input1 = [-1, 2, 1, -4]
-    target1 = 1
-    # print(threeSumClosest(input1, target1))
-
-    input2 = [0, 0, 0]
-    target2 = 1
-    # print(threeSumClosest(input2, target2))
-
-    input3 = [-3, -2, 4, 1, 2, 5]
-    target3 = 1
-    # print(threeSumClosest(input3, target3))
-
-    input4 = [-1000,-5,-5,-5,-5,-5,-5,-1,-1,-1]
-    target4 = -14
-    print(threeSumClosest(input4, target4))
+    input1 = [1, 8, 6, 2, 5, 4, 8, 3, 7]
+    input2 = [1, 1]
+    input3 = [1, 5, 6, 3, 10, 4, 3, 9]
+    input4 = [2, 3, 4, 5, 18, 17, 6]
+    print(maxArea(input4))
