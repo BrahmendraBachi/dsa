@@ -1,5 +1,3 @@
-from turtledemo.penrose import start
-
 from dsa.concepts.linkedlist.linkedlist import LinkedList
 
 def swapNodesInPairs(linkedList: LinkedList):
