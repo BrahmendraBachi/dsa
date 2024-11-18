@@ -1,4 +1,4 @@
-from dsa.concepts.linkedlist.linkedlist import LinkedList
+from dsa.concepts.lists.linkedlist.linkedlist import LinkedList
 
 def swapNodesInPairs(linkedList: LinkedList):
     linkedList.print_elements()

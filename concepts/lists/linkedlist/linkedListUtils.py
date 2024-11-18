@@ -1,4 +1,4 @@
-from dsa.concepts.linkedlist.linkedlist import Node, LinkedList
+from dsa.concepts.lists.linkedlist.linkedlist import Node, LinkedList
 
 
 def merge_sorted_linked_lists(linkedList1, linkedList2):
