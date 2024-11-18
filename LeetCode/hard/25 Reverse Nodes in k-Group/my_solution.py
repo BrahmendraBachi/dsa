@@ -1,4 +1,4 @@
-from dsa.concepts.lists.linkedlist.linkedlist import LinkedList
+from dsa.Concepts.DataTypes.Lists.Linkedlist.linkedlist import LinkedList
 
 def reverseNodesInKGroups(linkedList: LinkedList, k: int):
     n = linkedList.get_length()
