@@ -1,5 +1,3 @@
-from unittest.mock import right
-
 from binary_tree_utils import Node
 
 
