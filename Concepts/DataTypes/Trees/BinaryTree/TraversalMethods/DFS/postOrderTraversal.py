@@ -15,5 +15,3 @@ def postOrderTraversal(root):
 if __name__ == "__main__":
     binaryTree = getSampleBinaryTree()
     traversalElements = postOrderTraversal(binaryTree)
-
-    print(traversalElements)
