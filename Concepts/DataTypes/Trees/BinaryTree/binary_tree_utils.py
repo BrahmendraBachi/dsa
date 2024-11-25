@@ -1,6 +1,3 @@
-from dsa.Concepts.DataTypes.Trees.BinaryTree.BinarySearchTree.binarySearchTree import BinarySearchTree
-
-
 class Node:
     def __init__(self, val):
         self.val = val
@@ -30,10 +27,3 @@ def getSampleBinaryTree():
     nodeF.left = nodeG
 
     return rootNode
-
-def generateBinarySearchTree(elements):
-    binarySearchTree = BinarySearchTree(elements[0])
-    for val in elements[1:]:
-        binarySearchTree.add_child(val)
-
-    return binarySearchTree

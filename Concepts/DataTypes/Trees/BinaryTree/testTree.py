@@ -1,34 +1,32 @@
+from dsa.Concepts.DataTypes.Trees.BinaryTree.TraversalMethods.BFS.bfs import traverse_bfs
 from dsa.Concepts.DataTypes.Trees.BinaryTree.binary_tree_utils import Node
-
-def sumOfRootToLeafNode(treeNode, curr_sum = ""):
-    if not treeNode:
-        return 0
-    left_sum = right_sum = 0
-    curr_sum = curr_sum + str(treeNode.val)
-    if not (treeNode.left or treeNode.right):
-        return int(curr_sum)
-    if treeNode.left:
-        left_sum = sumOfRootToLeafNode(treeNode.left, curr_sum)
-    if treeNode.right:
-        right_sum = sumOfRootToLeafNode(treeNode.right, curr_sum)
-    return left_sum + right_sum
+from dsa.LeetCode.easy.solved.valid_paranthesis.my_solution import isValid
 
 
+def isValidBST(root):
+    if not root or not (root.left or root.right):
+        return True
+    left_side = right_side = True
+    if root.left:
+        left_side = root.left.val < root.val and isValidBST(root.left)
+    if root.right:
+        right_side = root.right.val > root.val and isValidBST(root.right)
+    return left_side and right_side
 if __name__ == "__main__":
-    # binarySearchTree = generateBinarySearchTree([2, 1, 3])
-    # binaryTree = generateBinarySearchTree([4, 9, 0, 5, 1])
-    rootNode = Node(4)
+    rootNode = Node(5)
 
-    node1 = Node(9)
-    node2 = Node(0)
-
-    node3 = Node(5)
-    node4 = Node(1)
+    node1 = Node(4)
+    node2 = Node(6)
+    node3 = Node(3)
+    node4 = Node(7)
 
     rootNode.left = node1
     rootNode.right = node2
+    node2.left = node3
+    node3.right = node4
 
-    node1.left = node3
-    node1.right = node4
-    print(sumOfRootToLeafNode(rootNode))
+    # print(traverse_bfs(rootNode))
+
+    isValidBST(rootNode)
+
 
