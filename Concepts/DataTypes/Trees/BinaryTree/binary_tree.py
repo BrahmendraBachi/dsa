@@ -42,7 +42,7 @@ class BinaryTree(Node):
     def getMaxDepth(self):
         count = 0
         if not (self.left or self.right):
-            return 0
+            return 1
         count += 1
         if not self.right:
             count += self.left.getMaxDepth()

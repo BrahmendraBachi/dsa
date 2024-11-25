@@ -130,4 +130,3 @@ if __name__ == "__main__":
     binarySearchTree.delete(13)
 
     binarySearchTree.inOrderTraversal()
-
