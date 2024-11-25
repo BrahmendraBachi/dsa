@@ -101,7 +101,6 @@ class BinarySearchTree:
 
 
 
-
 if __name__ == "__main__":
     # elements = [13, 7, 15, 8, 19, 14, 3, 18]
     elements = [13, 6, 8, 7, 15, 19, 14, 3, 4, 18]
