@@ -1,5 +1,5 @@
 # question
-https://leetcode.com/problems/symmetric-tree/description/
+https://leetcode.com/problems/sum-root-to-leaf-numbers
 
 # **My-solution**
 
@@ -7,4 +7,4 @@ https://leetcode.com/problems/symmetric-tree/description/
 ### _space-complexity_: `O(h)` _(h --> height of binary tree)_
 
 
-# topics: `Tree`, `Binary Tree`, `Depth First Search`, `Breadth First Search`'
+# topics: `Tree`, `Binary Tree`, `Depth First Search`'
