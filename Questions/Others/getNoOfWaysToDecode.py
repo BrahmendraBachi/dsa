@@ -2,11 +2,7 @@ def getNoOfWaysToDecode(numStr):
     if numStr[0] == "0":
         return 0
 
-    dp = {}
-
     def recursiveIteration(slate, i):
-        if i in dp:
-            return dp[i]
         if i >= len(numStr):
             return 1
         if len(slate) == 2:
@@ -16,8 +12,7 @@ def getNoOfWaysToDecode(numStr):
                 else:
                     return 1
             return 0
-        dp[i - 1] = recursiveIteration(slate + numStr[i], i) + recursiveIteration(numStr[i], i + 1)
-        return dp[i - 1]
+        return recursiveIteration(slate + numStr[i], i) + recursiveIteration(numStr[i], i + 1)
 
 
     return recursiveIteration(numStr[0], 1)
