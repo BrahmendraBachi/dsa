@@ -1,30 +1,43 @@
 from dsa.Concepts.DataTypes.Trees.BinaryTree.binary_tree_utils import Node
+from dsa.Concepts.DataTypes.Trees.BinaryTree.TraversalMethods.DFS.inOrderTraversal import inOrderTraversal
 
 
-def isValidBST(root):
-    if not root or not (root.left or root.right):
-        return True
-    left_side = right_side = True
-    if root.left:
-        left_side = root.left.val < root.val and isValidBST(root.left)
-    if root.right:
-        right_side = root.right.val > root.val and isValidBST(root.right)
-    return left_side and right_side
+def getKthSmallestElement(root, k):
+    countAndValue = {"count": 0, "val": None}
+    def traverseInOrder(node):
+        if countAndValue["val"]:
+            return
+        if node.left:
+            traverseInOrder(node.left)
+        countAndValue["count"] += 1
+        if countAndValue["count"] == k:
+            countAndValue["val"] = node.val
+            return
+        if node.right:
+            traverseInOrder(node.right)
+    traverseInOrder(root)
+    return countAndValue["val"]
 if __name__ == "__main__":
     rootNode = Node(5)
 
-    node1 = Node(4)
-    node2 = Node(6)
     node3 = Node(3)
-    node4 = Node(7)
+    node6 = Node(6)
 
-    rootNode.left = node1
-    rootNode.right = node2
-    node2.left = node3
+    rootNode.left = node3
+    rootNode.right = node6
+
+    node2 = Node(2)
+    node4 = Node(4)
+
+    node3.left = node2
     node3.right = node4
 
-    # print(traverse_bfs(rootNode))
+    node1 = Node(1)
 
-    isValidBST(rootNode)
+    node2.left = Node(1)
+
+    print(getKthSmallestElement(rootNode, 4))
+    # print(inOrderTraversal(rootNode))
+
 
 

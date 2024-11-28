@@ -2,13 +2,13 @@ from dsa.Concepts.DataTypes.Trees.BinaryTree.binary_tree_utils import getSampleB
 
 
 # order: left, root, right
-def InOrderTraversal(root):
+def inOrderTraversal(root):
     elements = []
     if root.left:
-        elements += InOrderTraversal(root.left)
+        elements += inOrderTraversal(root.left)
     elements += [root.val]
     if root.right:
-        elements += InOrderTraversal(root.right)
+        elements += inOrderTraversal(root.right)
     return elements
 
 
