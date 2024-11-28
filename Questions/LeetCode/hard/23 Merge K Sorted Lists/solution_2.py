@@ -1,5 +1,5 @@
-from concepts.linkedlist.linkedListUtils import convertListsToLinkedLists
-from concepts.linkedlist.linkedlist import LinkedList, Node
+from Concepts.linkedlist.linkedListUtils import convertListsToLinkedLists
+from Concepts.linkedlist.linkedlist import LinkedList, Node
 import heapq
 
 

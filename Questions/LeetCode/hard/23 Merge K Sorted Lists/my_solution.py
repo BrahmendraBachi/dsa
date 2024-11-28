@@ -1,5 +1,5 @@
-from concepts.linkedlist.linkedlist import LinkedList
-from concepts.linkedlist.linkedListUtils import merge_sorted_linked_lists, convertListsToLinkedLists
+from Concepts.linkedlist.linkedlist import LinkedList
+from Concepts.linkedlist.linkedListUtils import merge_sorted_linked_lists, convertListsToLinkedLists
 
 
 def mergeSortedLinkedLists(linkedLists):
