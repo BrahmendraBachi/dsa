@@ -16,4 +16,5 @@ def longestConsecutive(nums):
         count_hash[temp] = count
         max_count = max(count, max_count)
         count = 0
+
     return max_count
