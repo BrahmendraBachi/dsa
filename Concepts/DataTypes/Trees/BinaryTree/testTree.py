@@ -1,28 +1,50 @@
 from dsa.Concepts.DataTypes.Trees.BinaryTree.binary_tree_utils import Node
 
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
+def flatten(root):
+    left = right = None
+    if root.left:
+        left = flatten(root.left)
+    if root.right:
+        right = flatten(root.right)
 
-def isBST(node, min_val=float('-inf'), max_val=float('inf')):
-    if not node:
-        return True
-    if not (min_val < node.val < max_val):
-        return False
-    return isBST(node.left, min_val, node.val) and isBST(node.right, node.val, max_val)
-
+    temp = root
+    if left:
+        temp.right = left
+        while temp.right:
+            temp = temp.right
+    if right:
+        temp.right = right
+    root.left = None
+    return root
 
 
 
 
 
 if __name__ == "__main__":
-    root = TreeNode(10, TreeNode(5), TreeNode(15, TreeNode(12), TreeNode(20)))
+    rootNode = Node(1)
 
-    root2 = TreeNode(10, TreeNode(5), TreeNode(15, TreeNode(6), TreeNode(20)))
-    print(isBST(root2))
+    node2 = Node(2)
+    node5 = Node(5)
+
+    rootNode.left = node2
+    rootNode.right = node5
+
+    node3 = Node(3)
+    node4 = Node(4)
+
+    node2.left = node3
+    node2.right = node4
+
+    node6 = Node(6)
+    node5.right = node6
+
+
+    flattenRoot = flatten(rootNode)
+    print(flattenRoot)
+    while flattenRoot:
+        print(flattenRoot.val)
+        flattenRoot = flattenRoot.right
 
     # print(inOrderTraversal(rootNode))
 
