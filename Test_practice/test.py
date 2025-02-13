@@ -1,23 +1,25 @@
-def find_pages(arr, k):
-    def allocate(rem_arr, rem_k, start=1, allocation_arr=None):
-        end = len(rem_arr) - rem_k + 1
-        if allocation_arr is None:
-            allocation_arr = []
-        if rem_k == 1:
-            return [max(allocation_arr + [sum(rem_arr)])]
-        allocations = []
-        for i in range(1, end + 1):
-            curr_sum = sum(rem_arr[:i])
-            allocation_arr.append(curr_sum)
-            allocations += allocate(rem_arr[i:], rem_k - 1, i, allocation_arr)
-            allocation_arr.pop()
-        return allocations
-    all_allocations = allocate(arr, k)
-    return min(all_allocations)
+def lengthOfLIS(nums):
+
+    def calculate_max_count(start=0, max_count=None):
+        if max_count is None:
+            max_count = {}
+        if start == len(nums) - 1:
+            return 0
+        if nums[start] in max_count:
+            return max_count[nums[start]]
+        for i in range(start + 1, len(nums)):
+            count = 1
+            if nums[i] > nums[start]:
+                count += 1 + calculate_max_count(i, max_count)
+            else:
+                count += calculate_max_count(i, max_count)
+                if nums[i] in max_count:
+                    max_count[nums[i]] = max(max_count[nums[i]], count)
+                else:
+                    max_count[nums[i]] = count
+    calculate_max_count(0)
 
 if __name__ == "__main__":
-    input1 = ([3, 1, 1], 2)
-    input2 = ([3, 1, 2, 1, 6], 3)
-    print(find_pages(input2[0], input2[1]))
-    # print(find_pages(list(range(1, 31)), 10))
-    # input3 =
+    input1 = [10, 9, 2, 5, 3, 7, 101, 18]
+    input2 = [5, 2, 3, 6, 4]
+    print(lengthOfLIS(nums=input2))
