@@ -13,4 +13,4 @@ def combinations(nums, start=0, comb=None):
 
 
 if __name__ == "__main__":
-    print(combinations(list(range(1, 18))))
+    print(combinations(list(range(1, 4))))

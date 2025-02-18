@@ -11,6 +11,7 @@ def merge_two_sorted_lists(arr1, arr2):
 
     return merged_arr + arr2[j:] if i >= len(arr1) else merged_arr + arr1[i:]
 
+
 def merge_sort(arr):
     if len(arr) == 1 or len(arr) == 0:
         return arr
