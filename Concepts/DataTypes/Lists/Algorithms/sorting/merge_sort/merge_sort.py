@@ -21,7 +21,6 @@ def merge_sort(arr):
 
 
 if __name__ == "__main__":
-
     input1 = [2, 3, 5, 4, 6, 1, 1, 1]
     sorted_input1 = merge_sort(input1)
     print(sorted_input1)
