@@ -27,7 +27,7 @@ class Heap:
         n = len(arr)
         ind = n - 1
         parent = (ind - 1) // 2
-        isValidParent = arr[parent] < arr[ind]
+        isValidParent = arr[parent] <= arr[ind]
         while not isValidParent:
             arr[parent], arr[ind] = arr[ind], arr[parent]
             ind = parent
@@ -35,27 +35,19 @@ class Heap:
             isValidParent = arr[parent] < arr[ind]
         self.heapify(ind, n)
 
+    def pop(self):
+        if len(self.arr) == 0:
+            return
+        root = self.arr[0]
+        self.arr[0], self.arr[-1] = self.arr[-1], self.arr[0]
+        self.arr.pop()
+        self.heapify(0, len(self.arr))
+        return root
+
     def print_heap(self):
         for num in self.arr[:-1]:
             print(num, end=", ")
-        print(input_arr[-1])
-
-    def pop(self, ind=0):
-        n = len(self.arr)
-        left, right = (2 * ind) + 1, (2 * ind) + 2
-        isLeftValid, isRightValid = left < n, right < n
-        if not (isLeftValid or isRightValid):
-            self.arr.pop(ind)
-        elif not isRightValid:
-            self.arr[ind] = self.arr[left]
-            self.pop(left)
-        elif not isLeftValid:
-            self.arr[ind] = self.arr[right]
-            self.pop(right)
-        else:
-            smallest = left if self.arr[left] < self.arr[right] else right
-            self.arr[ind] = self.arr[smallest]
-            self.pop(smallest)
+        print(self.arr[-1])
 
 
 if __name__ == "__main__":
@@ -65,8 +57,8 @@ if __name__ == "__main__":
     heap_arr.add_to_heap(1)
     heap_arr.print_heap()
 
-    heap_arr.pop(2)
+    heap_arr.pop()
     heap_arr.print_heap()
 
-    heap_arr.add_to_heap(6)
-    heap_arr.print_heap()
+    # heap_arr.add_to_heap(6)
+    # heap_arr.print_heap()
