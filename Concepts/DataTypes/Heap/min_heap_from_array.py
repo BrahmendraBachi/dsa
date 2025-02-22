@@ -1,4 +1,4 @@
-class Heap:
+class Min_Heap:
     def __init__(self, arr):
         self.arr = arr
         self.convert_into_heap()
@@ -52,13 +52,10 @@ class Heap:
 
 if __name__ == "__main__":
     input_arr = [5, 3, 8, 4, 0, 6, 9, 2]
-    heap_arr = Heap(input_arr)
+    min_heap = Min_Heap(input_arr)
 
-    heap_arr.add_to_heap(1)
-    heap_arr.print_heap()
+    min_heap.add_to_heap(1)
+    min_heap.print_heap()
 
-    heap_arr.pop()
-    heap_arr.print_heap()
-
-    # heap_arr.add_to_heap(6)
-    # heap_arr.print_heap()
+    min_heap.pop()
+    min_heap.print_heap()
