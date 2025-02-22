@@ -13,11 +13,11 @@ def main():
     print_heap(arr)
 
     # pushes into heap array
-    heappush(arr, 7)
+    heappush(arr, 1)
     print_heap(arr)
 
     # pops the last element
-    heappop()
+    heappop(arr)
     print_heap(arr)
 
 
