@@ -1,10 +1,10 @@
-def addBinary(self, a: str, b: str) -> str:
+def addBinary(a: str, b: str) -> str:
     len_a, len_b = len(a), len(b)
-    if len(a) < len(b):
-        a = "0" * (len(b) - len(a)) + a
+    if len_a < len_a:
+        a = "0" * (len_b - len_a) + a
     else:
-        b = "0" * (len(a) - len(b)) + b
-    n = len(a) - 1
+        b = "0" * (len_a - len_b) + b
+    n = len_a - 1
     res = ""
     carr = 0
     while n >= 0:

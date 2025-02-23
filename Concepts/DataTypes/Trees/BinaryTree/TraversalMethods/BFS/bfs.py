@@ -1,4 +1,4 @@
-from dsa.Concepts.DataTypes.Trees.BinaryTree.binary_tree_utils import getSampleBinaryTree
+from Concepts.DataTypes.Trees.BinaryTree.binary_tree_utils import getSampleBinaryTree
 
 
 def traverse_bfs(root):
@@ -14,6 +14,7 @@ def traverse_bfs(root):
                 temp_nodes.append(node.right)
         root_nodes = temp_nodes
     return elements
+
 
 if __name__ == "__main__":
     binaryTree = getSampleBinaryTree()

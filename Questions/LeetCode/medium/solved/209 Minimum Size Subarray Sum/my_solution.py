@@ -1,4 +1,7 @@
-def minSubArrayLen(self, target: int, nums: List[int]) -> int:
+from typing import List
+
+
+def minSubArrayLen(target: int, nums: List[int]) -> int:
     len_n = len(nums)
     l, r = 0, 1
     if len(nums) == 1:

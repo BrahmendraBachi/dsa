@@ -1,5 +1,4 @@
 def lengthOfLIS(nums):
-    max_count_dict = {}
     for ind1 in range(0, len(nums)):
         inc_set = [nums[ind1]]
         max_count = 1
@@ -30,7 +29,6 @@ def lengthOfLIS(nums):
                 max_count = max(len(inc_set), max_count)
                 print(inc_set)
                 inc_set.pop()
-        max_count = max(len(inc_set), max_count)
         inc_set.pop()
     return
 

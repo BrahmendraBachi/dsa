@@ -1,3 +1,6 @@
+from typing import List
+
+
 def canJump(self, nums: List[int]) -> bool:
     prev_sum = 0
     n = len(nums)

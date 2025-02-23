@@ -1,5 +1,3 @@
-from dsa.Concepts.DataTypes.Trees.BinaryTree.TraversalMethods.DFS import InOrderTraversal
-
 class BinarySearchTree:
 
     def __init__(self, data):
@@ -20,6 +18,7 @@ class BinarySearchTree:
                 self.right.add_child(data)
             else:
                 self.right = BinarySearchTree(data)
+
     def preOrderTraversal(self):
         if not self.data:
             return
@@ -34,7 +33,7 @@ class BinarySearchTree:
             return
         if self.left:
             self.left.inOrderTraversal()
-        print(self.data, end = ", ")
+        print(self.data, end=", ")
         if self.right:
             self.right.inOrderTraversal()
 
@@ -61,6 +60,7 @@ class BinarySearchTree:
                 print(f"{searchValue} is not exists in binarySearchTree")
                 return
             self.right.search(searchValue)
+
     def findMin(self):
         if self.left:
             return self.left.findMin()
@@ -100,7 +100,6 @@ class BinarySearchTree:
                 self.right = self.right.delete(data)
 
 
-
 if __name__ == "__main__":
     # elements = [13, 7, 15, 8, 19, 14, 3, 18]
     elements = [13, 6, 8, 7, 15, 19, 14, 3, 4, 18]
@@ -117,12 +116,12 @@ if __name__ == "__main__":
     # binarySearchTree.postOrderTraversal()
     # print()
 
-    binarySearchTree.search(5) # not exists
-    binarySearchTree.search(19) # exists
-    binarySearchTree.search(15) # exists
+    binarySearchTree.search(5)  # not exists
+    binarySearchTree.search(19)  # exists
+    binarySearchTree.search(15)  # exists
 
-    print(binarySearchTree.findMin()) # 3
-    print(binarySearchTree.findMax()) # 19
+    print(binarySearchTree.findMin())  # 3
+    print(binarySearchTree.findMax())  # 19
 
     print(binarySearchTree.findSum())
 

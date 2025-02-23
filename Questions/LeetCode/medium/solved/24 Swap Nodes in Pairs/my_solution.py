@@ -1,8 +1,8 @@
-from dsa.Concepts.DataTypes.Lists.Linkedlist.linkedlist import LinkedList
+from Concepts.DataTypes.Lists.Linkedlist.linkedlist import LinkedList
+
 
 def swapNodesInPairs(linkedList: LinkedList):
     linkedList.print_elements()
-    n = 2
     ptr1 = linkedList.head
     ptr2 = linkedList.head.next
     start_node = ptr2

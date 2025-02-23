@@ -1,4 +1,7 @@
-def nextPermutation(self, nums: List[int]) -> None:
+from typing import List
+
+
+def nextPermutation(nums: List[int]) -> None:
     w = nums
     n = len(w)
     ind = -1
@@ -12,7 +15,7 @@ def nextPermutation(self, nums: List[int]) -> None:
     # If no such index exists, return "no answer"
     if ind == -1:
         w.sort()
-        return w
+        return
 
     # Find the largest index l greater than k such that w[k] < w[l]
     for j in range(n - 1, ind, -1):
@@ -23,4 +26,4 @@ def nextPermutation(self, nums: List[int]) -> None:
     # Reverse the suffix starting at index k+1
     w[ind + 1:] = reversed(w[ind + 1:])
 
-    return w
+    return

@@ -1,3 +1,6 @@
+from typing import List
+
+
 def canReach(self, arr: List[int], start: int, passed=None) -> bool:
     if passed is None:
         passed = {}

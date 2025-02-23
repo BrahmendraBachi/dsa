@@ -1,4 +1,4 @@
-from dsa.Concepts.DataTypes.Trees.BinaryTree.binary_tree_utils import getSampleBinaryTree
+from Concepts.DataTypes.Trees.BinaryTree.binary_tree_utils import getSampleBinaryTree
 
 
 # order: left, root, right
@@ -14,5 +14,5 @@ def inOrderTraversal(root):
 
 if __name__ == "__main__":
     binaryTree = getSampleBinaryTree()
-    traversalElements = InOrderTraversal(binaryTree)
+    traversalElements = inOrderTraversal(binaryTree)
     print(traversalElements)

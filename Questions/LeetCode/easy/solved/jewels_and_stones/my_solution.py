@@ -1,4 +1,4 @@
-def numJewelsInStones(self, jewels: str, stones: str) -> int:
+def numJewelsInStones(jewels: str, stones: str) -> int:
     let_counts = {}
     for i in stones:
         if i in let_counts:

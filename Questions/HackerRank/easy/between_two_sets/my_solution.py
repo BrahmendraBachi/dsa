@@ -1,6 +1,3 @@
-import os
-
-
 def getTotalX(a, b):
     right = min(b)
     left = max(a)

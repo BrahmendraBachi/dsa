@@ -1,9 +1,13 @@
+from typing import Optional
+
 
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
-def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+
+
+def mergeTwoLists(list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
     merged_arr = []
     while True:
         num1, num2 = None, None
@@ -31,7 +35,6 @@ def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) ->
         else:
             break
 
-    merged_list = None
     if not len(merged_arr):
         return None
     head = ListNode(merged_arr[0])

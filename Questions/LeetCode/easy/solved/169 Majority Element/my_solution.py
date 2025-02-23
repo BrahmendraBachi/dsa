@@ -1,5 +1,9 @@
+from typing import List
+
+
 def majorityElement(self, nums: List[int]) -> int:
     nums_dict = {}
+    num = 0
     for num in nums:
         if num in nums_dict:
             nums_dict[num] += 1

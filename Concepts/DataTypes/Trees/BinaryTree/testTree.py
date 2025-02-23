@@ -1,4 +1,5 @@
-from dsa.Concepts.DataTypes.Trees.BinaryTree.binary_tree_utils import Node
+from Concepts.DataTypes.Trees.BinaryTree.binary_tree_utils import Node
+
 
 def flatten(root):
     left = right = None
@@ -16,9 +17,6 @@ def flatten(root):
         temp.right = right
     root.left = None
     return root
-
-
-
 
 
 if __name__ == "__main__":
@@ -39,7 +37,6 @@ if __name__ == "__main__":
     node6 = Node(6)
     node5.right = node6
 
-
     flattenRoot = flatten(rootNode)
     print(flattenRoot)
     while flattenRoot:
@@ -47,6 +44,3 @@ if __name__ == "__main__":
         flattenRoot = flattenRoot.right
 
     # print(inOrderTraversal(rootNode))
-
-
-

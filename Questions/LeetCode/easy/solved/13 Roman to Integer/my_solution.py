@@ -1,4 +1,4 @@
-def mostFrequentEven(self, nums: List[int]) -> int:
+def mostFrequentEven(nums):
     nums_count = {}
     max_count_num = None
     max_count = 0

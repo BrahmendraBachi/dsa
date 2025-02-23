@@ -1,4 +1,5 @@
-from dsa.Concepts.DataTypes.Trees.BinaryTree.binary_tree_utils import getSampleBinaryTree
+from Concepts.DataTypes.Trees.BinaryTree.binary_tree_utils import getSampleBinaryTree
+
 
 # order: root, left, right
 def preOrderTraversal(root):
@@ -10,9 +11,6 @@ def preOrderTraversal(root):
     if root.right:
         elements += preOrderTraversal(root.right)
     return elements
-
-
-
 
 
 if __name__ == "__main__":

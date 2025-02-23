@@ -9,7 +9,3 @@ def pairs(k, arr):
         if target in arr_dict:
             count += 1
     return count
-
-
-if __name__ == '__main__':
-    pass

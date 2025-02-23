@@ -1,4 +1,4 @@
-def topKFrequent(self, nums, k):
+def topKFrequent(nums, k):
     nums_count = {}
     for num in nums:
         if num in nums_count:

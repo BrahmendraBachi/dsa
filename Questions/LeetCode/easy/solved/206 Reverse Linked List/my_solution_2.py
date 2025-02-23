@@ -2,6 +2,7 @@
 def reverseList(self, head):
     return self.recursiveReverse(None, head)
 
+
 def recursiveReverse(self, prev, curr):
     if not curr:
         return prev

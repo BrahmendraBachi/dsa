@@ -1,4 +1,7 @@
-def removeDuplicates(self, nums: List[int]) -> int:
+from typing import List
+
+
+def removeDuplicates(nums: List[int]) -> int:
     n = len(nums)
     isAlreadyFound = False
     curr_num = nums[0]
@@ -13,7 +16,7 @@ def removeDuplicates(self, nums: List[int]) -> int:
         isAlreadyFound = False
     shift = 0
     for i in range(n):
-        if nums[i] == None:
+        if nums[i] is None:
             shift += 1
             continue
         nums[i - shift], nums[i] = nums[i], nums[i - shift]

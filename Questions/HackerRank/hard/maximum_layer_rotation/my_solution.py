@@ -72,14 +72,3 @@ def matrixRotation(matrix, r):
         print()
 
     return rotatedMatrix
-
-
-if __name__ == '__main__':
-    first_multiple_input = input().rstrip().split()
-    inp_m = int(first_multiple_input[0])
-    inp_n = int(first_multiple_input[1])
-    inp_r = int(first_multiple_input[2])
-    inp_matrix = []
-    for _ in range(m):
-        inp_matrix.append(list(map(int, input().rstrip().split())))
-    matrixRotation(inp_matrix, inp_r)

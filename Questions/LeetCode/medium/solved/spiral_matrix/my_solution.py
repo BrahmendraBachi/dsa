@@ -1,9 +1,11 @@
-def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
+from typing import List
+
+
+def spiralOrder(matrix: List[List[int]]) -> List[int]:
     result = []
     starts = [0, 0]
     n, m = len(matrix), len(matrix[0])
     ends = [n - 1, m - 1]
-    is_iterate = True
     count = 0
     while count <= min(n, m) // 2:
         a, b = starts[1], ends[1] + 1

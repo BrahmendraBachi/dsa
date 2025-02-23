@@ -1,4 +1,7 @@
-def removeElement(self, nums: List[int], val: int) -> int:
+from typing import List
+
+
+def removeElement(nums: List[int], val: int) -> int:
     index = 0
     for i in range(len(nums)):
         if nums[i] != val:

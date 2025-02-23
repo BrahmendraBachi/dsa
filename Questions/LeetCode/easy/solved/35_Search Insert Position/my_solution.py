@@ -1,4 +1,4 @@
-def searchInsert(self, nums, target):
+def searchInsert(nums, target):
     def binary_search(left, right):
         if left > right:
             return left

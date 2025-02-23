@@ -1,4 +1,5 @@
-from dsa.Concepts.DataTypes.Lists.Linkedlist.linkedlist import LinkedList
+from Concepts.DataTypes.Lists.Linkedlist.linkedlist import LinkedList
+
 
 def reverseNodesInKGroups(linkedList: LinkedList, k: int):
     n = linkedList.get_length()
@@ -29,12 +30,6 @@ def reverseNodesInKGroups(linkedList: LinkedList, k: int):
     return start_head if start_head else currNode
 
 
-
-
-
-
-
-
 if __name__ == "__main__":
     linkedList1 = LinkedList([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
     k1 = 4
@@ -43,6 +38,6 @@ if __name__ == "__main__":
 
     linkedList2 = LinkedList([1, 2, 3])
     k2 = 4
-    head = reverseNodesInKGroups(linkedList2, k2)
-    LinkedList(start_head=head).print_elements()
+    list_head = reverseNodesInKGroups(linkedList2, k2)
+    LinkedList(start_head=list_head).print_elements()
     # LinkedList(star).print_elements()

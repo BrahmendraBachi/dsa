@@ -1,4 +1,7 @@
-def mostFrequentEven(self, nums: List[int]) -> int:
+from typing import List
+
+
+def mostFrequentEven(nums: List[int]) -> int:
     nums_count = {}
     max_count_num = None
     max_count = 0

@@ -184,5 +184,5 @@ if __name__ == '__main__':
         }
     }
     curr_activated_route = 'main/pm/projects/project/activities'
-    active_tab = getActiveTab(_tabs, curr_activated_route)
-    print(active_tab["routerParams"]["routePart"])
+    _active_tab = getActiveTab(_tabs, curr_activated_route)
+    print(_active_tab["routerParams"]["routePart"])

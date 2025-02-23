@@ -1,4 +1,4 @@
-def reverse(self, x):
+def reverse(x):
     isNegative = False
     x = list(str(x))
     if x[0] == "-":

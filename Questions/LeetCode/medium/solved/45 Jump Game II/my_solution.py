@@ -1,4 +1,4 @@
-def jump(self, nums):
+def jump(nums):
     min_counts = [0] * len(nums)
     for start in range(len(nums) - 2, -1, -1):
         if nums[start] == 0:

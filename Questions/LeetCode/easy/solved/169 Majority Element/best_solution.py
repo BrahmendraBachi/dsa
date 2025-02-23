@@ -1,4 +1,4 @@
-def majorityElement(self, nums: List[int]) -> int:
+def majorityElement(nums):
     prev, count = nums[0], 1
     for num in nums[1:]:
         if num != prev:

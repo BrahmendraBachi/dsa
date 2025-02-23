@@ -33,11 +33,11 @@ def queensAttack(n, k, r_q, c_q, obstacles):
                 if d6 == -1 or r1 - r2 < d6:
                     d6 = r1 - r2
 
-            if r2 - r1 > 0 and c2 - c1 < 0:
+            if r2 - r1 > 0 > c2 - c1:
                 if d7 == -1 or r2 - r1 < d7:
                     d7 = r2 - r1
 
-            if r2 - r1 < 0 and c2 - c1 > 0:
+            if r2 - r1 < 0 < c2 - c1:
                 if d8 == -1 or c2 - c1 < d8:
                     d8 = c2 - c1
 

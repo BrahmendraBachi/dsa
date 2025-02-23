@@ -1,3 +1,6 @@
+from typing import List
+
+
 def maxProfit(self, prices: List[int]) -> int:
     n = len(prices)
     prices_new = [0] * n
