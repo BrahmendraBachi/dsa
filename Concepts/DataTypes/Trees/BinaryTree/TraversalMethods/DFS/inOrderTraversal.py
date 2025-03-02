@@ -12,7 +12,23 @@ def inOrderTraversal(root):
     return elements
 
 
+def inOrderTraversalIterative(root):
+    stack = []
+    elements = []
+    while root or len(stack):
+        while root:
+            stack.append(root)
+            root = root
+            root = root.left
+        root = stack.pop()
+        elements.append(root.val)
+        root = root.right
+
+    return elements
+
+
 if __name__ == "__main__":
     binaryTree = getSampleBinaryTree()
     traversalElements = inOrderTraversal(binaryTree)
-    print(traversalElements)
+    # print(traversalElements)
+    print(inOrderTraversalIterative(binaryTree))
