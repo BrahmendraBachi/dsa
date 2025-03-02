@@ -18,7 +18,6 @@ def inOrderTraversalIterative(root):
     while root or len(stack):
         while root:
             stack.append(root)
-            root = root
             root = root.left
         root = stack.pop()
         elements.append(root.val)
