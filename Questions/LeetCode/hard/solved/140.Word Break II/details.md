@@ -7,4 +7,4 @@ https://leetcode.com/problems/candy
 ### _space-complexity_: `O(n)`
 
 
-# topics: `Arrays`, `Dynamic Programming`, `Greedy`
+# topics: `Strings`, `Hash Table`, `Array`, `Dynamic Programming`, `BackTracking`, `Trie`, `Memoization`
