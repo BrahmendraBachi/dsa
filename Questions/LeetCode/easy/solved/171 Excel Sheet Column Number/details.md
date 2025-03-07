@@ -8,4 +8,4 @@ https://leetcode.com/problems/majority-element/description
 
 
 
-# topics: `Arrays`, `Hash Map`, `Counting`, `Divide and Conuer`, `Sorting`'
+# topics: `Strings`, `Math`'
