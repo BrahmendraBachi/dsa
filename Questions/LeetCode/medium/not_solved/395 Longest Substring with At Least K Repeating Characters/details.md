@@ -2,12 +2,13 @@
 https://leetcode.com/problems/longest-substring-with-at-least-k-repeating-characters/
 
 
-# **Best-solution**
+# **My Solution (timeLimit exceeded)**
 
 ### _time-complexity_: `O(2*n)`
 ### _space-complexity_: `O(26)`
 
-# **My Solution (timeLimit exceeded)**
+
+# **Best-solution**
 
 ### _time-complexity_: `O(n)`
 ### _space-complexity_: `O(26)`
