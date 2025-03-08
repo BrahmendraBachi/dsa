@@ -82,7 +82,6 @@ class Undirected_Graph:
                     return True
         return False
 
-
     def print_graph(self):
         for node, adj_nodes in self.graph.items():
             print(node, adj_nodes)
@@ -129,7 +128,6 @@ def main():
     print(graph.check_if_path_exists_dfs_recursive("i", "l"))
     print(graph.check_if_path_exists_dfs_recursive("i", "m"))
     print(graph.check_if_path_exists_dfs_recursive("i", "o"))
-
 
 
 if __name__ == "__main__":
