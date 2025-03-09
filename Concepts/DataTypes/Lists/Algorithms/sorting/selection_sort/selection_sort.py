@@ -1,4 +1,3 @@
-
 def run_test_case(inp, out):
     _inp = inp.copy()
     selection_sort(inp)
@@ -19,6 +18,7 @@ def run_test_case(inp, out):
         RED = '\033[31m'
         RESET = '\033[0m'
         print(RED + f"An unexpected error occurred: {e}" + RESET)
+
 
 def selection_sort(arr):
     for i in range(len(arr)):
