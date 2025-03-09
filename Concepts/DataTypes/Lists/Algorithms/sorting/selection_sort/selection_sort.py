@@ -5,5 +5,6 @@ def selection_sort(arr):
                 arr[i], arr[j] = arr[j], arr[i]
     return arr
 
+
 if __name__ == '__main__':
     print(selection_sort([2, 3, 4, 1, 2, 5]))
