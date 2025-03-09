@@ -53,16 +53,12 @@ class BinaryTree(Node):
         return count
 
 
-
-
-
-
 def main():
-
     binaryTree = prepareBinaryTree()
     print(binaryTree.countLeafNodes())
 
     print(binaryTree.getMaxDepth())
+
 
 if __name__ == "__main__":
     main()
