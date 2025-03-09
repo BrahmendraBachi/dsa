@@ -12,7 +12,8 @@ def partition(arr):
     return i + 1
 
 
-def quick_sort(arr):quickarr) == 1:
+def quick_sort(arr):
+    if len(arr) == 0 or len(arr) == 1:
         return arr
     par_ind = partition(arr)
 
