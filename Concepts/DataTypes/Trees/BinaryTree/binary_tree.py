@@ -28,29 +28,27 @@ def prepareBinaryTree():
 class BinaryTree(Node):
 
     def countLeafNodes(self):
+        if not self.left and not self.right:
+            return 1
         count = 0
-        if not (self.left or self.right):
-            count += 1
-        elif not self.right:
+        if self.left:
             count += self.left.countLeafNodes()
-        elif not self.left:
+        if self.right:
             count += self.right.countLeafNodes()
-        else:
-            count += self.left.countLeafNodes() + self.right.countLeafNodes()
+
         return count
 
     def getMaxDepth(self):
-        count = 0
-        if not (self.left or self.right):
+        if not self.left and not self.right:
             return 1
-        count += 1
-        if not self.right:
-            count += self.left.getMaxDepth()
-        elif not self.left:
-            count += self.right.getMaxDepth()
-        else:
-            count += max(self.left.getMaxDepth(), self.right.getMaxDepth())
-        return count
+
+        left = right = 0
+        if self.left:
+            left = self.left.getMaxDepth()
+        if self.right:
+            right = self.right.getMaxDepth()
+
+        return 1 + max(left, right)
 
 
 def main():

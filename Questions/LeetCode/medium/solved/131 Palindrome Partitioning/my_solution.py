@@ -11,6 +11,7 @@ def partition(s: str) -> List[List[str]]:
     def palindromic_partition(ind, curr_par):
         if ind >= n:
             res.append(curr_par)
+            
             return
 
         for i in range(ind, n):

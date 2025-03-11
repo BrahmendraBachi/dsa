@@ -2,17 +2,17 @@ from Concepts.DataTypes.Trees.BinaryTree.binary_tree_utils import getSampleBinar
 
 
 def traverse_bfs(root):
+
     elements = []
-    root_nodes = [root]
-    while len(root_nodes):
-        temp_nodes = []
-        for node in root_nodes:
-            elements.append(node.val)
-            if node.left:
-                temp_nodes.append(node.left)
-            if node.right:
-                temp_nodes.append(node.right)
-        root_nodes = temp_nodes
+    queue = [root]
+    while len(queue):
+        root, queue = queue[0], queue[1:]
+        elements.append(root.val)
+        if root.left:
+            queue.append(root.left)
+        if root.right:
+            queue.append(root.right)
+
     return elements
 
 

@@ -108,19 +108,17 @@ class LinkedList:
             self.print_elements()
 
     def reverse(self, printAfterReverse=True):
-        prev, curr = None, self.head
-        while curr:
-            next_node = curr.next
-            curr.next = prev
-
-            prev = curr
-            curr = next_node
+        prev, root = None, self.head
+        while root:
+            next = root.next
+            root.next = prev
+            prev = root
+            root = next
         self.head = prev
 
         if printAfterReverse:
             print("After reversing linked_list: ")
             self.print_elements()
-
 
     def recursiveReverse(self, printAfterReverse=True):
         self.head = self.reverseNodes(None, self.head)
@@ -135,8 +133,6 @@ class LinkedList:
         temp = currNode.next
         currNode.next = prev
         return self.reverseNodes(currNode, temp)
-
-
 
     def returnHead(self):
         return self.head
