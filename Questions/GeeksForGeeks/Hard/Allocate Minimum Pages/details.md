@@ -13,7 +13,7 @@ https://www.geeksforgeeks.org/problems/allocate-minimum-number-of-pages0937/1?it
 
 # **Best Solution**
 
-### _time-complexity_: `O(nlogn)` (not a good one)
-### _space-complexity_: `O(1)` (not a good one)
+### _time-complexity_: `O(nlogn)` 
+### _space-complexity_: `O(1)`
 
 # topics: `Array`, `Sorting`, `Binary Search`, `Recursion`

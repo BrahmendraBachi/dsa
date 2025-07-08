@@ -1,4 +1,4 @@
-from dsa.Concepts.DataTypes.Lists.Linkedlist.linkedlist import Node, LinkedList
+from Concepts.DataTypes.Lists.Linkedlist.linkedlist import Node, LinkedList
 
 
 def merge_sorted_linked_lists(linkedList1, linkedList2):
@@ -30,15 +30,29 @@ def merge_sorted_linked_lists(linkedList1, linkedList2):
     new_linked_list.print_elements()
     return new_linked_list
 
-def recursiveReverse(prev: Node, currNode: Node):
-    if not currNode:
-        return prev
-    temp = currNode.next
-    currNode.next = prev
-    return recursivelyReverse(currNode, temp)
 
-def convertListsToLinkedLists(lists):
-    return [LinkedList(_list) for _list in lists]
+def merge_two_linked_lists(linkedList1, linkedList2):
+    head1, head2 = linkedList1.returnHead(), linkedList2.returnHead()
+    if head1.val > head2.val:
+        head1, head2 = head2, head1
+
+    temp1 = head1
+
+    prev = None
+    while head1 and head2:
+        if head1.val < head2.val:
+            prev = head1
+            head1 = head1.next
+        else:
+            prev.next = head2
+            temp = head2.next
+            head2.next = head1
+            prev = head2
+            head2 = temp
+        if head2:
+            prev.next = head2
+
+    return temp1
 
 
 class LinkedListUtils:
@@ -52,6 +66,7 @@ if __name__ == "__main__":
     linked_list1 = LinkedList(sorted_list1)
     linked_list2 = LinkedList(sorted_list2)
     linkedListUtils = LinkedListUtils()
-    merged_linked_list = merge_sorted_linked_lists(linked_list1, linked_list2)
-    merged_linked_list = LinkedList(start_head=merged_linked_list)
-    merged_linked_list.print_elements()
+    # merged_linked_list = merge_sorted_linked_lists(linked_list1, linked_list2)
+    # merged_linked_list = LinkedList(start_head=merged_linked_list)
+    merged_linked_list = merge_two_linked_lists(linked_list1, linked_list2)
+    # merged_linked_list.print_elements()
