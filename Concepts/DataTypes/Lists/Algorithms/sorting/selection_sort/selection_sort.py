@@ -1,5 +1,5 @@
 
-from dsa.Concepts.DataTypes.Lists.Algorithms.sorting.selection_sort.test_cases import test_cases
+from dsa.Concepts.DataTypes.Lists.Algorithms.sorting.test_cases import test_cases
 
 def is_sorted(arr):
 
