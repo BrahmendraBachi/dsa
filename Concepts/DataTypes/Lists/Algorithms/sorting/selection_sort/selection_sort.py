@@ -1,48 +1,40 @@
-def run_test_case(inp, out):
-    _inp = inp.copy()
-    selection_sort(inp)
 
-    try:
-        for i in range(len(inp)):
-            assert inp[i] == out[i]
-            pass
-        print("Test Passed!")
-    except AssertionError:
-        RED = '\033[31m'
-        RESET = '\033[0m'
-        print(
-            RED + f"Test Failed! Input: {RESET} {_inp} {RED}, Expected: {RESET}{out}{RED}, Got: {RESET}{inp}"
-        )
+from dsa.Concepts.DataTypes.Lists.Algorithms.sorting.selection_sort.test_cases import test_cases
 
-    except Exception as e:
-        RED = '\033[31m'
-        RESET = '\033[0m'
-        print(RED + f"An unexpected error occurred: {e}" + RESET)
+def is_sorted(arr):
+
+    for i in range(1, len(arr)):
+        if arr[i] < arr[i - 1]:
+            return False
+    return True
 
 
 def selection_sort(arr):
-    for i in range(len(arr)):
-        for j in range(i + 1, len(arr)):
-            if arr[j] < arr[i]:
+
+    for i in range(arr):
+        for j in range(i + 1, arr):
+            if arr[i] > arr[j]:
                 arr[i], arr[j] = arr[j], arr[i]
     return arr
 
 
 def main():
-    test_cases = [
-        {"input": [], "output": []},
-        {"input": [5], "output": [5]},
-        {"input": [1, 2, 3, 4, 5], "output": [1, 2, 3, 4, 5]},
-        {"input": [5, 4, 3, 2, 1], "output": [1, 2, 3, 4, 5]},
-        {"input": [1, 3, 5, 2, 3, 1], "output": [1, 1, 2, 3, 3, 5]},
-        {"input": [2, 2, 2, 2, 2], "output": [2, 2, 2, 2, 2]},
-        {"input": [-5, 2, -1, 0, 3], "output": [-5, -1, 0, 2, 3]},
-        {"input": [0, -3, 5, -1, 2], "output": [-3, -1, 0, 2, 5]},
-        {"input": [1, 2, 3, 5, 4], "output": [1, 2, 3, 4, 5]}
-    ]
+    try:
+        for test_case in test_cases:
+            copied_test_case = test_case
+            selection_sort(copied_test_case)
+            if not is_sorted(copied_test_case.copy()):
+                raise Exception(f"input_arr: {test_case} \n",
+                                f"Expected to be sorted, got this output: {copied_test_case}")
+        print("Passed all testCases")
 
-    for test_case in test_cases:
-        run_test_case(test_case["input"], test_case["output"])
+    except Exception as err:
+        print(err)
+
+
+
+
+
 
 
 if __name__ == '__main__':
