@@ -40,29 +40,6 @@ def merge_sort(arr):
 
     merge_two_sorted_arrays(left, right, arr)
 
-
-def run_test_case(inp, out):
-    _inp = inp.copy()
-    merge_sort(inp)
-
-    try:
-        for i in range(len(inp)):
-            assert inp[i] == out[i]
-            pass
-        print("Test Passed!")
-    except AssertionError:
-        RED = '\033[31m'
-        RESET = '\033[0m'
-        print(
-            RED + f"Test Failed! Input: {RESET} {_inp} {RED}, Expected: {RESET}{out}{RED}, Got: {RESET}{inp}"
-        )
-
-    except Exception as e:
-        RED = '\033[31m'
-        RESET = '\033[0m'
-        print(RED + f"An unexpected error occurred: {e}" + RESET)
-
-
 def main():
     try:
         for test_case in test_cases:
