@@ -1,6 +1,9 @@
+from Concepts.DataTypes.Lists.Algorithms.sorting.sorting_helpers import is_sorted
+from Concepts.DataTypes.Lists.Algorithms.sorting.test_cases import test_cases
+
+
 def merge_two_sorted_arrays(arr1, arr2, arr):
     i = j = k = 0
-
     while i < len(arr1) and j < len(arr2):
         if arr1[i] < arr2[j]:
             arr[k] = arr1[i]
@@ -21,9 +24,12 @@ def merge_two_sorted_arrays(arr1, arr2, arr):
         k += 1
 
 
+
+
 def merge_sort(arr):
-    if len(arr) == 1 or len(arr) == 0:
+    if len(arr) <= 1:
         return
+
     m = len(arr) // 2
 
     left = arr[:m]
@@ -31,6 +37,7 @@ def merge_sort(arr):
 
     merge_sort(left)
     merge_sort(right)
+
     merge_two_sorted_arrays(left, right, arr)
 
 
@@ -57,22 +64,18 @@ def run_test_case(inp, out):
 
 
 def main():
-    test_cases = [
-        {"input": [], "output": []},
-        {"input": [5], "output": [5]},
-        {"input": [1, 2, 3, 4, 5], "output": [1, 2, 3, 4, 5]},
-        {"input": [5, 4, 3, 2, 1], "output": [1, 2, 3, 4, 5]},
-        {"input": [1, 3, 5, 2, 3, 1], "output": [1, 1, 2, 3, 3, 5]},
-        {"input": [2, 2, 2, 2, 2], "output": [2, 2, 2, 2, 2]},
-        {"input": [-5, 2, -1, 0, 3], "output": [-5, -1, 0, 2, 3]},
-        {"input": [0, -3, 5, -1, 2], "output": [-3, -1, 0, 2, 5]},
-        {"input": [1, 2, 3, 5, 4], "output": [1, 2, 3, 4, 5]}
-    ]
+    try:
+        for test_case in test_cases:
+            test_case = test_case["inp_arr"]
+            copied_test_case = test_case.copy()
+            merge_sort(copied_test_case)
+            if not is_sorted(copied_test_case):
+                raise Exception(f"input_arr: {test_case['inp_arr']} \n",
+                                f"Expected to be sorted, got this output: {copied_test_case}")
+        print("Passed all testCases")
 
-    for test_case in test_cases:
-        run_test_case(test_case["input"], test_case["output"])
-
+    except Exception as err:
+        print(err)
 
 if __name__ == "__main__":
     main()
-
